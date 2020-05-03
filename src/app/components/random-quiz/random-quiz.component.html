@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="options">
+    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit">Sprawdź wyniki</button>
+    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit" (click)="getVerbsQuiz()">Wygeneruj Quiz!</button>
+  </div>
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="quiz">
+    <div class="questionAndAnswer" *ngFor="let question of randomQuestions">
+      <div class="sentence">
+        {{question.sentence}}
+      </div>
+      <div class="answers">
+        <div class="answer btn bg-dark text-white font-weight-bold" *ngFor="let answer of question.forms">
+          {{answer}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WordComponent } from './components/word/word.component';
 import { VerbsQuizComponent } from './components/verbs-quiz/verbs-quiz.component';
+import { RandomQuizComponent } from './components/random-quiz/random-quiz.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'words', component: WordComponent},
   {path: 'verbs', component: VerbsQuizComponent},
+  {path: 'random', component: RandomQuizComponent},
   {path: 'logout', component: LogoutComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -35,7 +37,8 @@ const routes: Routes = [
     NavbarComponent,
     SidebarComponent,
     WordComponent,
-    VerbsQuizComponent
+    VerbsQuizComponent,
+    RandomQuizComponent
   ],
   imports: [
     BrowserModule,
