@@ -15,6 +15,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WordComponent } from './components/word/word.component';
 import { VerbsQuizComponent } from './components/verbs-quiz/verbs-quiz.component';
 import { RandomQuizComponent } from './components/random-quiz/random-quiz.component';
+import { ExamplesQuizComponent } from './components/examples-quiz/examples-quiz.component';
+import { DefinitionsQuizComponent } from './components/definitions-quiz/definitions-quiz.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'words', component: WordComponent},
   {path: 'verbs', component: VerbsQuizComponent},
+  {path: 'examples', component: ExamplesQuizComponent},
+  {path: 'definitions', component: DefinitionsQuizComponent},
   {path: 'random', component: RandomQuizComponent},
   {path: 'logout', component: LogoutComponent},
   {path: '**', component: PageNotFoundComponent}
@@ -38,7 +42,9 @@ const routes: Routes = [
     SidebarComponent,
     WordComponent,
     VerbsQuizComponent,
-    RandomQuizComponent
+    RandomQuizComponent,
+    ExamplesQuizComponent,
+    DefinitionsQuizComponent
   ],
   imports: [
     BrowserModule,

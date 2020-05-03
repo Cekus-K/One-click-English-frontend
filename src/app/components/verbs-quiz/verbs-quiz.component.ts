@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {QuizService} from '../../services/quiz.service';
-import {Question} from '../../common/question';
+import {ChoiceTestQuestion} from '../../common/choiceTestQuestion';
 
 @Component({
   selector: 'app-verbs-quiz',
@@ -9,7 +9,7 @@ import {Question} from '../../common/question';
 })
 export class VerbsQuizComponent implements OnInit {
 
-  verbQuestions: Question[];
+  verbQuestions: ChoiceTestQuestion[];
 
   constructor(private quizService: QuizService) {
   }
@@ -18,7 +18,7 @@ export class VerbsQuizComponent implements OnInit {
   }
 
   getVerbsQuiz() {
-    this.quizService.getVerbsExam().subscribe(
+    this.quizService.getVerbsQuiz().subscribe(
       data => this.verbQuestions = data
     );
   }

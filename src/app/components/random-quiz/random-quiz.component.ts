@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Question} from '../../common/question';
+import {ChoiceTestQuestion} from '../../common/choiceTestQuestion';
 import {QuizService} from '../../services/quiz.service';
 
 @Component({
@@ -9,7 +9,7 @@ import {QuizService} from '../../services/quiz.service';
 })
 export class RandomQuizComponent implements OnInit {
 
-  randomQuestions: Question[];
+  randomQuestions: ChoiceTestQuestion[];
 
   constructor(private quizService: QuizService) {
   }
@@ -17,8 +17,8 @@ export class RandomQuizComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getVerbsQuiz() {
-    this.quizService.getRandomExam().subscribe(
+  getRandomQuiz() {
+    this.quizService.getRandomQuiz().subscribe(
       data => this.randomQuestions = data
     );
   }

@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="options">
+    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit">Sprawdź wyniki</button>
+    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit" (click)="getDefinitionsExam()">
+      Wygeneruj Quiz!
+    </button>
+  </div>
+  <div>
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="quiz">
+    <div class="questionAndAnswer" *ngFor="let question of definitionsQuestions">
+      <div class="sentence">
+        {{question.sentence}}
+      </div>
+      <div class="answers">
+        <div>
+          <input class="form-control" type="text" placeholder="Wprowadź definicje..."/>
+        </div>
+        <div *ngIf="question.prompt == true">
+          <span class="plAnswer btn font-weight-bold">Po polsku: {{question.answer.plWord}}</span>
+        </div>
+        <div>
+          <button class="prompt btn bg-dark text-white font-weight-bold" (click)="getPrompt(question)">Podpowiedź?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

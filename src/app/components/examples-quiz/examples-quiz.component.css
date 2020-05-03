@@ -1,0 +1,64 @@
+.container {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.quiz {
+  height: 500px;
+  width: 660px;
+  overflow: auto;
+  margin-left: 10px;
+  border: 1px darkgrey solid;
+}
+
+.options {
+  border: 1px darkgrey solid;
+  height: 60px;
+  width: 1000px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.quizButton {
+  width: 470px;
+}
+
+.quiz {
+  padding: 10px;
+}
+
+.questionAndAnswer {
+  border: 1px darkgrey solid;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.sentence {
+  margin-bottom: 5px;
+}
+
+.prompt {
+  width: 130px
+}
+
+.plAnswer {
+  width: 200px;
+  border: 1px darkgrey solid;
+}
+
+.form-control {
+  width: 250px;
+}

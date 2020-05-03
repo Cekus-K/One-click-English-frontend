@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Question} from '../common/question';
+import {ChoiceTestQuestion} from '../common/choiceTestQuestion';
+import {WrittenTestQuestion} from '../common/writtenTestQuestion';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +14,20 @@ export class QuizService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getVerbsExam(): Observable<Question[]> {
-    return this.httpClient.get<Question[]>(this.baseUrl + '/forms');
+  getVerbsQuiz(): Observable<ChoiceTestQuestion[]> {
+    return this.httpClient.get<ChoiceTestQuestion[]>(this.baseUrl + '/forms');
   }
 
-  getRandomExam(): Observable<Question[]> {
-    return this.httpClient.get<Question[]>(this.baseUrl + '/random');
+  getRandomQuiz(): Observable<ChoiceTestQuestion[]> {
+    return this.httpClient.get<ChoiceTestQuestion[]>(this.baseUrl + '/random');
   }
 
-  getExampleExam(): Observable<Question[]> {
-    return this.httpClient.get<Question[]>(this.baseUrl + '/examples');
+  getExampleExam(): Observable<WrittenTestQuestion[]> {
+    return this.httpClient.get<WrittenTestQuestion[]>(this.baseUrl + '/examples');
   }
+
+  getDefinitionsExam(): Observable<WrittenTestQuestion[]> {
+    return this.httpClient.get<WrittenTestQuestion[]>(this.baseUrl + '/definitions');
+  }
+
 }
