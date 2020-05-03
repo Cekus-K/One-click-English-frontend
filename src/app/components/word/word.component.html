@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="newWord">
+    <input class="form-control" type="text" [(ngModel)]="word.enWord" placeholder="Wprowadź angielskie słówko..."/>
+    <button class="btn bg-dark text-white font-weight-bold" type="submit" (click)="addNewWord()">Dodaj słówko</button>
+  </div>
+  <div class="sideBar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="wordsListOuter">
+    <div class="wordsList" *ngFor="let word of words">
+      <div class="word">
+        {{word.enWord}}
+      </div>
+      <div class="word">
+        {{word.plWord}}
+      </div>
+    </div>
+  </div>
+</div>

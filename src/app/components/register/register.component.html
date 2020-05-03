@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container col-lg-6">
+  <h1 class="text-center">Rejestracja</h1>
+  <div class="card">
+    <div class="card-body">
+      <form class="form-group">
+        <div class="alert alert-success" *ngIf='registerSuccess'>{{successMessage}}</div>
+        <div class="form-group">
+          <label for="username">Nazwa użytkownika:</label>
+          <input type="text" class="form-control" id="username" [(ngModel)]="username" placeholder="Wprowdź nazwę użytkownika..."
+                 name="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Hasło:</label>
+          <input type="password" class="form-control" [(ngModel)]="password" id="password" placeholder="Wprowadź hasło..."
+                 name="password">
+        </div>
+        <div class="form-group">
+          <label for="password">Hasło:</label>
+          <input type="password" class="form-control" [(ngModel)]="passwordConfirm" id="passwordConfirm" placeholder="Potwierdź hasło..."
+                 name="passwordConfirm">
+        </div>
+        <button (click)=handleRegister() class="btn btn-success">Zarejestruj się</button>
+      </form>
+    </div>
+  </div>
+</div>

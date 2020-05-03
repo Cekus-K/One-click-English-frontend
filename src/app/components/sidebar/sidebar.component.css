@@ -1,0 +1,12 @@
+.container {
+  padding: 10px;
+  border: 1px darkgrey solid;
+  width: 300px;
+  height: 500px;
+}
+
+.list-group-item {
+  background: black;
+  color: white;
+  margin-bottom: 2px;
+}

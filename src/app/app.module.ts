@@ -1,16 +1,54 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import {RouterModule, Routes} from '@angular/router';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './components/login/login.component';
+import {RegisterComponent} from './components/register/register.component';
+import {LogoutComponent} from './components/logout/logout.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+import {HttpInterceptorService} from './services/http-interceptor.service';
+import {FormsModule} from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { WordComponent } from './components/word/word.component';
+
+const routes: Routes = [
+  {path: '', component: LoginComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'words', component: WordComponent},
+  {path: 'logout', component: LogoutComponent},
+  {path: '**', component: PageNotFoundComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    LogoutComponent,
+    PageNotFoundComponent,
+    NavbarComponent,
+    SidebarComponent,
+    WordComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  exports: [RouterModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

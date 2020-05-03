@@ -1,0 +1,54 @@
+.container {
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.form-control {
+  width: 700px;
+  margin-right: 10px;
+}
+
+.btn {
+  width: 230px;
+}
+
+.newWord {
+  border: 1px darkgrey solid;
+  height: 60px;
+  width: 1000px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+}
+
+.wordsListOuter {
+  height: 500px;
+  width: 660px;
+  overflow: auto;
+  margin-left: 10px;
+  border: 1px darkgrey solid;
+  padding-top: 10px;
+}
+
+.word {
+  width: 48%;
+  height: 50px;
+  border: 1px darkgrey solid;
+  border-radius: 2%;
+  padding: 10px;
+  text-align: center;
+}
+
+.wordsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5px;
+}
+
