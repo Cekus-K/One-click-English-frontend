@@ -11,7 +11,7 @@
   margin-right: 10px;
 }
 
-.btn {
+.addBtn {
   width: 230px;
 }
 
@@ -36,13 +36,19 @@
 }
 
 .word {
-  width: 48%;
+  width: 45%;
   height: 50px;
   border: 1px darkgrey solid;
   border-radius: 2%;
   padding: 10px;
   text-align: center;
 }
+
+.trash {
+  width: 50px;
+  height: 50px;
+}
+
 
 .wordsList {
   display: flex;

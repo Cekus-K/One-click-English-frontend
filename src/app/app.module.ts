@@ -13,12 +13,14 @@ import {FormsModule} from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { WordComponent } from './components/word/word.component';
+import { VerbsQuizComponent } from './components/verbs-quiz/verbs-quiz.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'words', component: WordComponent},
+  {path: 'verbs', component: VerbsQuizComponent},
   {path: 'logout', component: LogoutComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
@@ -32,7 +34,8 @@ const routes: Routes = [
     PageNotFoundComponent,
     NavbarComponent,
     SidebarComponent,
-    WordComponent
+    WordComponent,
+    VerbsQuizComponent
   ],
   imports: [
     BrowserModule,

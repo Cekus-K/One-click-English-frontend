@@ -20,4 +20,8 @@ export class WordService {
   addWord(word: Word): Observable<Word> {
     return this.httpClient.post<Word>(this.baseUrl + '/add', JSON.stringify(word));
   }
+
+  deleteWord(word: Word): Observable<void> {
+    return this.httpClient.post<void>(this.baseUrl + '/remove', JSON.stringify(word));
+  }
 }

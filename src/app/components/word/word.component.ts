@@ -32,6 +32,12 @@ export class WordComponent implements OnInit {
     });
   }
 
+  deleteWord(word: Word) {
+    this.wordService.deleteWord(word).subscribe(() => {
+      this.listWords();
+    });
+  }
+
   private reset() {
     this.word.enWord = null;
   }
