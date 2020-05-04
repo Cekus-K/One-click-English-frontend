@@ -1,8 +1,12 @@
 <app-navbar></app-navbar>
 <div class="container">
   <div class="options">
-    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit" (click)="checkQuiz()">Sprawdź wyniki</button>
-    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit" (click)="getRandomQuiz()">Wygeneruj Quiz!</button>
+    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit" (click)="checkQuiz()">Sprawdź
+      wyniki
+    </button>
+    <button class="quizButton btn bg-dark text-white font-weight-bold" type="submit" (click)="getRandomQuiz()">Wygeneruj
+      Quiz!
+    </button>
   </div>
   <div>
     <app-sidebar></app-sidebar>
@@ -11,11 +15,15 @@
     <div class="questionAndAnswer" *ngFor="let question of randomQuestions">
       <div class="sentence font-weight-bold ">
         {{question.sentence}}
+        <div *ngIf="check">
+          <div class="alert alert-success" *ngIf="answers[randomQuestions.indexOf(question)] == true">{{correct}}</div>
+          <div class="alert alert-danger" *ngIf="answers[randomQuestions.indexOf(question)] == false">{{incorrect}}</div>
+        </div>
       </div>
       <div class="answers">
         <div class="answer btn bg-secondary text-white font-weight-bold" *ngFor="let answer of question.forms">
           {{answer}}
-          <input class="markAnswer" type="checkbox" (click)="addToAnswers(question.sentence, answer)">
+          <input class="markAnswer" type="checkbox" (click)="addToAnswers(answer, question)">
         </div>
       </div>
     </div>

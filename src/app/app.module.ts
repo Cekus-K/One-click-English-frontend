@@ -10,13 +10,13 @@ import {LogoutComponent} from './components/logout/logout.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {HttpInterceptorService} from './services/http-interceptor.service';
 import {FormsModule} from '@angular/forms';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { WordComponent } from './components/word/word.component';
-import { VerbsQuizComponent } from './components/verbs-quiz/verbs-quiz.component';
-import { RandomQuizComponent } from './components/random-quiz/random-quiz.component';
-import { ExamplesQuizComponent } from './components/examples-quiz/examples-quiz.component';
-import { DefinitionsQuizComponent } from './components/definitions-quiz/definitions-quiz.component';
+import {NavbarComponent} from './components/navbar/navbar.component';
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {WordComponent} from './components/word/word.component';
+import {VerbsQuizComponent} from './components/verbs-quiz/verbs-quiz.component';
+import {RandomQuizComponent} from './components/random-quiz/random-quiz.component';
+import {ExamplesQuizComponent} from './components/examples-quiz/examples-quiz.component';
+import {DefinitionsQuizComponent} from './components/definitions-quiz/definitions-quiz.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -26,6 +26,7 @@ const routes: Routes = [
   {path: 'verbs', component: VerbsQuizComponent},
   {path: 'examples', component: ExamplesQuizComponent},
   {path: 'definitions', component: DefinitionsQuizComponent},
+  {path: 'flashcards', component: PageNotFoundComponent},
   {path: 'random', component: RandomQuizComponent},
   {path: 'logout', component: LogoutComponent},
   {path: '**', component: PageNotFoundComponent}

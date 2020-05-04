@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
-  errorMessage = 'Invalid Credentials';
+  errorMessage = 'Nieprawidłowa nazwa użytkownika lub hasło.';
   successMessage: string;
   invalidLogin = false;
   loginSuccess = false;
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.authenticationService(this.username, this.password).subscribe(() => {
       this.invalidLogin = false;
       this.loginSuccess = true;
-      this.successMessage = 'Login Successful.';
+      this.successMessage = 'Logowanie pomyślne.';
       this.router.navigate(['words']);
     }, () => {
       this.invalidLogin = true;

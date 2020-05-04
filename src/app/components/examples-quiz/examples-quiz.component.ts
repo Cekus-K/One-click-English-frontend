@@ -24,6 +24,6 @@ export class ExamplesQuizComponent implements OnInit {
   }
 
   getPrompt(question: WrittenTestQuestion) {
-    question.prompt = true;
+    question.prompt = !question.prompt;
   }
 }

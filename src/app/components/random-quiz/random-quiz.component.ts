@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ChoiceTestQuestion} from '../../common/choiceTestQuestion';
 import {QuizService} from '../../services/quiz.service';
-import {Answer} from '../../common/answer';
 
 @Component({
   selector: 'app-random-quiz',
@@ -11,7 +10,10 @@ import {Answer} from '../../common/answer';
 export class RandomQuizComponent implements OnInit {
 
   randomQuestions: ChoiceTestQuestion[];
-  answers: Answer[] = [];
+  answers: boolean[] = [];
+  check = false;
+  correct = 'Dobrze!';
+  incorrect = 'Źle!';
 
   constructor(private quizService: QuizService) {
   }
@@ -20,19 +22,19 @@ export class RandomQuizComponent implements OnInit {
   }
 
   getRandomQuiz() {
-    this.quizService.getRandomQuiz().subscribe(
-      data => this.randomQuestions = data
+    this.quizService.getRandomQuiz().subscribe(data => {
+      this.check = false;
+      this.randomQuestions = data;
+      }
     );
   }
 
-  addToAnswers(sentence: string, answer: string) {
-    if (!this.answers.includes({sentence, answer})) {
-    this.answers.push({sentence, answer});
-    }
-    console.log('add to answers: ' + sentence + ': ' + answer);
+  addToAnswers(markedAnswer: string, question: ChoiceTestQuestion) {
+    const index = this.randomQuestions.indexOf(question);
+    this.answers[index] = question.answer === markedAnswer;
   }
 
   checkQuiz() {
-    console.log(this.answers);
+    this.check = true;
   }
 }
