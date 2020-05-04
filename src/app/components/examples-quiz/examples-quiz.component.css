@@ -51,14 +51,15 @@
 }
 
 .prompt {
-  width: 130px
+  width: 130px;
+  border: 1px dimgray solid;
 }
 
 .plAnswer {
-  width: 200px;
+  width: 220px;
   border: 1px darkgrey solid;
 }
 
 .form-control {
-  width: 250px;
+  width: 230px;
 }

@@ -9,12 +9,13 @@
   </div>
   <div class="quiz">
     <div class="questionAndAnswer" *ngFor="let question of verbQuestions">
-      <div class="sentence">
+      <div class="sentence font-weight-bold ">
         {{question.sentence}}
       </div>
       <div class="answers">
-        <div class="answer btn bg-dark text-white font-weight-bold" *ngFor="let answer of question.forms">
+        <div class="answer btn bg-secondary text-white font-weight-bold" *ngFor="let answer of question.forms">
           {{answer}}
+          <input class="markAnswer" type="checkbox" (click)="addToAnswers(question.sentence, answer)">
         </div>
       </div>
     </div>

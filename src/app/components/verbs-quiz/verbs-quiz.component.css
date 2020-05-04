@@ -47,11 +47,23 @@
 }
 
 .answer {
-  border: 1px darkgrey solid;
-  width: 24%;
+  border: 1px dimgray solid;
+  width: 49%;
   height: 40px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 5px;
+  padding-left: 20px;
+  padding-right: 10px;
 }
 
 .sentence {
   margin-bottom: 5px;
+}
+
+.markAnswer {
+  height: 20px;
+  width: 20px;
+  margin: 3px;
 }

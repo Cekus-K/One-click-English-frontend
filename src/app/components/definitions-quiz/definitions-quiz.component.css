@@ -51,7 +51,8 @@
 }
 
 .prompt {
-  width: 130px
+  width: 130px;
+  border: 1px dimgray solid;
 }
 
 .plAnswer {
@@ -60,6 +61,6 @@
 }
 
 .form-control {
-  width: 250px;
+  width: 230px;
 }
 
