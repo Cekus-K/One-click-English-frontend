@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WrittenTestQuestion} from '../../common/writtenTestQuestion';
 import {QuizService} from '../../services/quiz.service';
 
@@ -10,6 +10,11 @@ import {QuizService} from '../../services/quiz.service';
 export class ExamplesQuizComponent implements OnInit {
 
   examplesQuestions: WrittenTestQuestion[];
+  answers: boolean[] = [];
+  check = false;
+  showAnswers = false;
+  correct = 'Dobrze!';
+  incorrect = 'Źle!';
 
   constructor(private quizService: QuizService) {
   }
@@ -18,6 +23,7 @@ export class ExamplesQuizComponent implements OnInit {
   }
 
   getExamplesExam() {
+    this.showAnswers = false;
     this.quizService.getExampleExam().subscribe(
       data => this.examplesQuestions = data
     );
@@ -25,5 +31,17 @@ export class ExamplesQuizComponent implements OnInit {
 
   getPrompt(question: WrittenTestQuestion) {
     question.prompt = !question.prompt;
+  }
+
+  addToAnswers(givenWord: string, question: WrittenTestQuestion) {
+    const index = this.examplesQuestions.indexOf(question);
+    this.answers[index] = question.answer.enWord === givenWord;
+  }
+
+  checkQuiz() {
+    this.check = true;
+    setTimeout(() => {
+      this.showAnswers = true;
+    }, 5);
   }
 }

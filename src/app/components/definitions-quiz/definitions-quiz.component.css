@@ -53,14 +53,23 @@
 .prompt {
   width: 130px;
   border: 1px dimgray solid;
+  height: 50px;
+
 }
 
 .plAnswer {
   width: 220px;
-  border: 1px darkgrey solid;
+  border: 1px gainsboro solid;
+  height: 50px;
 }
 
 .form-control {
   width: 230px;
+  height: 50px;
 }
 
+.alert {
+  width: 220px;
+  height: 50px;
+  margin: 0;
+}

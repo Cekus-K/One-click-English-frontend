@@ -11,7 +11,10 @@ import {Answer} from '../../common/answer';
 export class VerbsQuizComponent implements OnInit {
 
   verbQuestions: ChoiceTestQuestion[];
-  answers: Answer[] = [];
+  answers: boolean[] = [];
+  check = false;
+  correct = 'Dobrze!';
+  incorrect = 'Źle!';
 
   constructor(private quizService: QuizService) {
   }
@@ -20,19 +23,19 @@ export class VerbsQuizComponent implements OnInit {
   }
 
   getVerbsQuiz() {
-    this.quizService.getVerbsQuiz().subscribe(
-      data => this.verbQuestions = data
+    this.quizService.getVerbsQuiz().subscribe(data => {
+        this.check = false;
+        this.verbQuestions = data;
+      }
     );
   }
 
-  addToAnswers(sentence: string, answer: string) {
-    if (!this.answers.includes({sentence, answer})) {
-      this.answers.push({sentence, answer});
-    }
-    console.log('add to answers: ' + sentence + ': ' + answer);
+  addToAnswers(markedAnswer: string, question: ChoiceTestQuestion) {
+    const index = this.verbQuestions.indexOf(question);
+    this.answers[index] = question.answer === markedAnswer;
   }
 
   checkQuiz() {
-    console.log(this.answers);
+    this.check = true;
   }
 }

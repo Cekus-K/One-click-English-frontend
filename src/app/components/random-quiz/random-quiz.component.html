@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="answers">
-        <div class="answer btn bg-secondary text-white font-weight-bold" *ngFor="let answer of question.forms">
+        <div (click)="checkbox.click()" class="answer btn bg-secondary text-white font-weight-bold" *ngFor="let answer of question.forms">
           {{answer}}
-          <input class="markAnswer" type="checkbox" (click)="addToAnswers(answer, question)">
+          <input class="markAnswer" #checkbox type="checkbox" (click)="addToAnswers(answer, question)">
         </div>
       </div>
     </div>
